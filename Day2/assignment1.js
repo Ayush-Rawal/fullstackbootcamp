@@ -1,0 +1,16 @@
+post = {};
+post.name = "";
+post.profilepic = "";
+post.action = ""; // updated profile picture, shared memory etc.
+post.timestamp = null;
+post.content = []; // Will contain text or links to file(s) inserted
+post.likes = null;
+post.recentlikes = []; // Three recent likes.. this, this, this and 3 others liked..
+post.comments = {}; //Will hae text, like, reply/comment, timestamp etc properties
+post.reactions = {};
+post.iswith = [];
+post.isdoing = "";
+post.isfeeling = "";
+post.isattending = "";
+post.privacy = ""; // public, friends, only me...
+post.language = "";
