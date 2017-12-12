@@ -5,21 +5,22 @@ import Interests from './components/Interests'
 
 class App extends Component {
 
-    constructor(){
+    constructor() {
         super();
-        this.state= {
-            name:"",
-            Image:""
+        this.state = {
+            name: "Ayush",
+            Image: "http://loremipsum.com/400/200",
+            interests: ["Cricket", "Hockey", "Football", "Salsa"]
         }
-        
+
     }
 
     render() {
-        let interest = '';
         return ( < div className = "App" >
-            <h1> Hello React! </h1>    
-            <Profile/>
-            <Interests name="Ayush" image={this.state.Image}/>
+            <h1 > Hello React! </h1>     <
+            Profile name = { this.state.name }
+            image = { this.state.Image }/>
+            <Interests interests = { this.state.interests } name = { this.state.name }/>
             </div >
         );
     }
