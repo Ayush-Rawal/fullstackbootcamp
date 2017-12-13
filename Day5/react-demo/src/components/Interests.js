@@ -6,7 +6,8 @@ class Interest extends Component {
             return ( < div className = "App" >
                     <h1 > Interests of { this.props.name }: </h1>  
                     <ul>{
-                       this.props.interests.map(name => <li>{name}</li>)}   
+                       this.props.interests.map(name => <li key="name">{name}</li>)} 
+                       {/* key can also be index(more preferable)    */}
                         </ul>					
                         </div>);
                         }
