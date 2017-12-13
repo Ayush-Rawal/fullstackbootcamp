@@ -9,7 +9,7 @@ class App extends Component {
         super();
         this.state = {
             name: "Ayush",
-            Image: "http://loremipsum.com/400/200",
+            Image: "http://placeholder.com/400x200",
             interests: ["Cricket", "Hockey", "Football", "Salsa"]
         }
 
@@ -17,9 +17,8 @@ class App extends Component {
 
     render() {
         return ( < div className = "App" >
-            <h1 > Hello React! </h1>     <
-            Profile name = { this.state.name }
-            image = { this.state.Image }/>
+            <h1 > Hello React! </h1>     
+            <Profile name = { this.state.name } image = { this.state.Image }/>
             <Interests interests = { this.state.interests } name = { this.state.name }/>
             </div >
         );
