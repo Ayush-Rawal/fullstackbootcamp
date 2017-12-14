@@ -46,3 +46,17 @@ class Interest extends Component {
                     }
 
                     export default Interest;
+
+
+
+                    //Possible only incase of STATELESS COMPONENETS:
+
+                    
+/* 
+                    const Interest = ({sports}) => { //removes this. and props.
+                        let listitems =sports.map...
+                        return (
+                            ...
+                        )
+                    }
+                    export default Interest */

@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import './App.css';
 import Profile from './components/Profile'
 import Interests from './components/Interests'
-import 'bootstrap/dist/css/bootstrap.css'
+//import 'bootstrap/dist/css/bootstrap.css'
+import jquery from 'jquery' //you can replace jquery with $
 
 class App extends Component {
 
@@ -17,10 +18,33 @@ class App extends Component {
 
     }
 
+    addInterest(){
+       let interest = this.state.interests;
+       interest.push("newsport")
+       this.setState({
+        interests:interest
+       })
+    }
+//Demonstrating API call
+
+getdata(ref){
+    let root = 'https://jsonplaceholder.typicode.com';
+    jquery.ajax({
+      url: root + '/posts',
+      method: 'GET'
+    }).then(function(data) {
+      ref.setState({
+          interests:data.map(post => post.title)
+      })
+        console.log(data);
+    });
+}
+
     render() {
+        this.getdata(this)
         return ( <div className = "App">
             <h1> Hello React! </h1>     
-            <Profile name = { this.state.name } image = { this.state.Image } age = {this.state.age}>
+            <Profile name = { this.state.name } image = { this.state.Image } age = {this.state.age} addInterest={this.addInterest.bind(this)} >
             {/* <h1>Hello</h1>
             <h2>World</h2> */}
             </Profile>
