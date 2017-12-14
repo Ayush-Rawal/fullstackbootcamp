@@ -33,7 +33,7 @@ class Interest extends Component {
                     <input type = "text" placeholder="Enter interest here" className="input-lg" value={this.state.inpVal} onChange={change => this.updateInpVal(change)} />
                 </div>  
                 <div className="col-lg-6">
-                <button type="submit" className="btn btn-success" onClick={this.addInterest.bind(this)} >Submit</button>
+                <button type="submit" className="btn btn-success btn-lg" onClick={this.addInterest.bind(this)} >Submit</button>
                 </div>  
             </div>  
                     <h1 > Interests of { this.props.name }: </h1>
