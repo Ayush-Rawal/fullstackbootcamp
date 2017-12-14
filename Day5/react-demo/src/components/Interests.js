@@ -12,6 +12,7 @@ class Interest extends Component {
 
     render() {
             return ( < div className = "App" >
+<<<<<<< HEAD
             <div className ="row">
                 <div className="col-md-6">
                     <input type = "text" placeholder="Enter interest here" className="input-lg" />
@@ -24,6 +25,12 @@ class Interest extends Component {
                     <ul className="list-group" >{
                        this.props.interests.map(name => <li key="name" className="list-group-item" >{name}</li>)} 
                        {/* key can also be index(more preferable) */}
+=======
+                    <h1 > Interests of { this.props.name }: </h1>  
+                    <ul>{
+                       this.props.interests.map(name => <li key="name">{name}</li>)} 
+                       {/* key can also be index(more preferable)    */}
+>>>>>>> 24aa36a43a08e31a196647f627fcf397ecdd33cb
                         </ul>					
                         </div>);
                         }
