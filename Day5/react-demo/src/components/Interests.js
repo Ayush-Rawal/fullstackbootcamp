@@ -4,33 +4,42 @@ import './App.css';
 class Interest extends Component {
 
     constructor(props){
+        super();
         this.state = {
-            interests:props.interests
-            
+            interests:props.interests,
+            inpVal:""
         }
+    }
+
+    updateInpVal(change){
+        console.log(change)
+        this.setState({
+            inpVal:change.target.value
+        })
+    }
+
+    addInterest(){
+        let ints = this.state.interests
+        ints.push(this.state.inpVal)
+        this.setState({
+            interests:ints
+        })
     }
 
     render() {
             return ( < div className = "App" >
-<<<<<<< HEAD
             <div className ="row">
-                <div className="col-md-6">
-                    <input type = "text" placeholder="Enter interest here" className="input-lg" />
+                <div className="col-lg-6">
+                    <input type = "text" placeholder="Enter interest here" className="input-lg" value={this.state.inpVal} onChange={change => this.updateInpVal(change)} />
                 </div>  
-                <div className="col-md-3">
-                <button type="submit" className="btn btn-success" >Submit</button>
+                <div className="col-lg-6">
+                <button type="submit" className="btn btn-success" onClick={this.addInterest.bind(this)} >Submit</button>
                 </div>  
             </div>  
                     <h1 > Interests of { this.props.name }: </h1>
                     <ul className="list-group" >{
-                       this.props.interests.map(name => <li key="name" className="list-group-item" >{name}</li>)} 
+                       this.state.interests.map(name => <li key={name} className="list-group-item" >{name}</li>)} 
                        {/* key can also be index(more preferable) */}
-=======
-                    <h1 > Interests of { this.props.name }: </h1>  
-                    <ul>{
-                       this.props.interests.map(name => <li key="name">{name}</li>)} 
-                       {/* key can also be index(more preferable)    */}
->>>>>>> 24aa36a43a08e31a196647f627fcf397ecdd33cb
                         </ul>					
                         </div>);
                         }

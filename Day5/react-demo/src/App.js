@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import Profile from './components/Profile'
 import Interests from './components/Interests'
+import 'bootstrap/dist/css/bootstrap.css'
 
 class App extends Component {
 
@@ -9,7 +10,7 @@ class App extends Component {
         super();
         this.state = {
             name: "Ayush",
-            Image: "http://placeholder.com/400x200",
+            Image: "http://via.placeholder.com/400x200",
             interests: ["Cricket", "Hockey", "Football", "Salsa"],
             age:18
         }
@@ -20,8 +21,8 @@ class App extends Component {
         return ( <div className = "App">
             <h1> Hello React! </h1>     
             <Profile name = { this.state.name } image = { this.state.Image } age = {this.state.age}>
-            <h1>Hello</h1>
-            <h2>World</h2>
+{/*             <h1>Hello</h1>
+            <h2>World</h2> */}
             </Profile>
             <Interests interests = { this.state.interests } name = { this.state.name }/>
             </div >
