@@ -6,7 +6,7 @@ class Interest extends Component {
     constructor(props){
         super();
         this.state = {
-            interests:props.interests,
+            interests:["Sport","sport"],
             inpVal:""
         }
     }
