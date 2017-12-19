@@ -5,12 +5,15 @@ const morgan = require("morgan") // for logs
 const app = express();
 
 app.use(express.static('public'));
-app.use(bodyParser.urlencoded({})); // For parsing the request the body
+app.use(bodyParser.urlencoded({
+    extended: false,
+})); // For parsing the request the body
 app.use(bodyParser.json());
-app.use(morgan, 'tiny')
+app.use(morgan('combined'))
 
-app.POST("/", (req, res) => {
-    console.log(req.body); // to access request body
+app.post("/Welcome", (req, res) => {
+    console.log(req); // to access request body
+    res.send('<h3>Hello ' + req.body.name + '!</h3>');
 });
 
 // app.get("/", (req, res) =>res.sendStatus(404);)
