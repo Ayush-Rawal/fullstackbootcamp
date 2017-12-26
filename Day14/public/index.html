@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>Socket.IO chat</title>
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+        var socket = io();
+    </script>
+</head>
+
+<body>
+    <ul id="messages"></ul>
+    <!-- <form action=""> -->
+    <input id="m" autocomplete="off" /><button onclick="sendMsg()">Send</button>
+    <!-- </form> -->
+    <script>
+        // frontend to backend
+        function sendMsg() {
+            var msg = document.getElementById('m').value;
+            console.log(msg);
+            socket.emit('chatmsg', msg)
+        };
+        socket.on('chatsend', function(msg) {
+            document.getElementById('messages').appendChild('<li>Hello</li>')
+        });
+    </script>
+</body>
+
+</html>
